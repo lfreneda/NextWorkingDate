@@ -48,7 +48,8 @@
   <ItemGroup>
     <Compile Include="BrazilianNonFixedHolidaysTests.cs" />
     <Compile Include="HolidayConfigurationSectionTests.cs" />
-    <Compile Include="NextWorkingDayTests.cs" />
+    <Compile Include="NextWorkingDateWithHolidayProviderTests.cs" />
+    <Compile Include="NextWorkingDayWithNoHolidayProviderTests.cs" />
     <Compile Include="NonFixedHolidaysTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stubs\HolidayProviderFake.cs" />

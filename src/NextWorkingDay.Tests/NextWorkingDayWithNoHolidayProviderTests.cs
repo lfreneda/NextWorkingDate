@@ -6,7 +6,7 @@ using NextWorkingDay.Tests.Stubs;
 namespace NextWorkingDay.Tests
 {
     [TestFixture]
-    public class NextWorkingDayTests
+    public class NextWorkingDateWithNoHolidayProviderTests
     {
         private NextWorkingDate _nextWorkingDate;
 

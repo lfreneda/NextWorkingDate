@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Linq;
 using NextWorkingDay.HolidayProviders;
 
 namespace NextWorkingDay
 {
     public class NextWorkingDate : INextWorkingDate
     {
-        private readonly IHolidayProvider _holidayProvider;
+        private readonly IHolidayProvider[] _holidayProviders;
 
-        public NextWorkingDate(IHolidayProvider holidayProvider)
+        public NextWorkingDate(params IHolidayProvider[] holidayProviders)
         {
-            _holidayProvider = holidayProvider;
+            _holidayProviders = holidayProviders;
         }
 
         public DateTime GetNext(DateTime date)
@@ -20,8 +21,9 @@ namespace NextWorkingDay
             return date;
         }
 
-        private bool IsCurrentDateAHoliday(DateTime date) {
-            return _holidayProvider.IsHoliday(date);
+        private bool IsCurrentDateAHoliday(DateTime date)
+        {
+            return _holidayProviders.Any(holidayProvider => holidayProvider.IsHoliday(date));
         }
     }
 }

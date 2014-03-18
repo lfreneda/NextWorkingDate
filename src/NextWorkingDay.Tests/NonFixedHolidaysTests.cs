@@ -23,7 +23,6 @@ namespace NextWorkingDay.Tests
         [TestCase(2024, 03, 31)]
         public void GivenAYear_EasterDateShouldBeAsExpected(int year, int easterMonthExpected, int easterDayExpected)
         {
-
             var easterDateExpected = new DateTime(year, easterMonthExpected, easterDayExpected);
             var nonFixedHolidays = new NonFixedHolidays(year);
 
