@@ -1,15 +1,11 @@
 ﻿using System;
+using NextWorkingDay.HolidayProviders;
 
 namespace NextWorkingDay
 {
     public class NextWorkingDate : INextWorkingDate
     {
         private readonly IHolidayProvider _holidayProvider;
-
-        public NextWorkingDate()
-        {
-
-        }
 
         public NextWorkingDate(IHolidayProvider holidayProvider)
         {
@@ -25,13 +21,7 @@ namespace NextWorkingDay
         }
 
         private bool IsCurrentDateAHoliday(DateTime date) {
-            if (_holidayProvider == null) return false;
             return _holidayProvider.IsHoliday(date);
         }
-    }
-
-    public interface IHolidayProvider
-    {
-        bool IsHoliday(DateTime date);
     }
 }

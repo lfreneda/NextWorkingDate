@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\HolidayConfigurationCollection.cs" />
+    <Compile Include="Configuration\HolidayConfigurationElement.cs" />
+    <Compile Include="Configuration\HolidayConfigurationSection.cs" />
+    <Compile Include="HolidayProviders\BrazilianNonFixedHolidays.cs" />
+    <Compile Include="HolidayProviders\ConfigurationHolidayProvider.cs" />
+    <Compile Include="HolidayProviders\IHolidayProvider.cs" />
+    <Compile Include="HolidayProviders\NonFixedHolidays.cs" />
     <Compile Include="NextWorkingDate.cs" />
     <Compile Include="INextWorkingDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

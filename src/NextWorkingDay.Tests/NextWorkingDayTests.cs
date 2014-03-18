@@ -1,6 +1,7 @@
 ﻿using System;
 using FluentAssertions;
 using NUnit.Framework;
+using NextWorkingDay.Tests.Stubs;
 
 namespace NextWorkingDay.Tests
 {
@@ -12,7 +13,8 @@ namespace NextWorkingDay.Tests
         [SetUp]
         public void SetUp()
         {
-            _nextWorkingDate = new NextWorkingDate();
+            var fakeHolidayProvider = new HolidayProviderFake(date => false);
+            _nextWorkingDate = new NextWorkingDate(fakeHolidayProvider);
         }
 
         [Test]
@@ -49,7 +51,5 @@ namespace NextWorkingDay.Tests
             workingDate.Should().Be(expectedWorkingDate,
                                     "Next working date after sunday (2014-03-30) should be monday (2014-03-31)");
         }
-
-   
     }
 }
