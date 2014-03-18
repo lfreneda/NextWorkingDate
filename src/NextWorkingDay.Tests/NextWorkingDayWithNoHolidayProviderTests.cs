@@ -13,8 +13,7 @@ namespace NextWorkingDay.Tests
         [SetUp]
         public void SetUp()
         {
-            var fakeHolidayProvider = new HolidayProviderFake(date => false);
-            _nextWorkingDate = new NextWorkingDate(fakeHolidayProvider);
+            _nextWorkingDate = new NextWorkingDate();
         }
 
         [Test]
