@@ -20,6 +20,34 @@ A Páscoa, Corpus Christi e o nosso Carnaval acontecem em datas diferentes a cad
       var workingDate = nextWorkingDate.GetNext(date);
 ```
 
+#### Tenho que instanciar esses providers toda hora? Não! 
+
+O que voce pode fazer é uma subclasse que carrege seus providers, por exemplo:
+
+```C#
+   public class NextWorkingBrazilDate : NextWorkingDate
+    {
+        public NextWorkingBrazilDate()
+            : base(
+                new BrazilianNonFixedHolidays(DateTime.Now.Year),
+                new ConfigurationHolidayProvider())
+        {
+
+        }
+    }
+}
+```
+
+Ficando bem clean/simples
+
+```C#
+      var date = DateTime.Now; //or whatever date you want to :P
+      
+      var nextWorkingDate = new NextWorkingBrazilDate();
+      
+      var workingDate = nextWorkingDate.GetNext(date);
+```
+
 ### IHolidayProvider
 
 Caso queria alterar de onde buscar feriados, basta criar uma nova implementação da IHolidayProvider, por exemplo, você pode querer buscar isso do banco de dados
