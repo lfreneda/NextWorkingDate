@@ -15,7 +15,8 @@ namespace NextWorkingDay.Tests
         {
             _nextWorkingDate = new NextWorkingDate(
                 new ConfigurationHolidayProvider(),
-                new BrazilianNonFixedHolidays(DateTime.Now.Year));
+                new BrazilianNonFixedHolidays(DateTime.Now.Year)
+            );
         }
 
         [Test]

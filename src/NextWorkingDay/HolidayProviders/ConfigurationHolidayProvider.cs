@@ -24,7 +24,7 @@ namespace NextWorkingDay.HolidayProviders
                     return true;
                 }
 
-                if (configurationElement.Day == date.Day && configurationElement.Month == date.Month)
+                if (configurationElement.Day == date.Day && configurationElement.Month == date.Month && !configurationElement.Year.HasValue)
                 {
                     return true;
                 }
