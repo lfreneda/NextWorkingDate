@@ -5,7 +5,10 @@ Hoje é um dia útil? Qual é o próximo dia útil? Pequena lógica para determi
 
 ### Pra que isso?
 
-Em um projeto que trabalhei precisavamos gerar boletos, e a data de vencimento do boleto devia ser um dia útil.
+Em um projeto que trabalhei precisavamos gerar boletos. 
+A data de vencimento do boleto (para pagamento) deveria ser um dia útil.
+
+Existem alguns feriados no Brasil que são móveis (cada ano o carnaval cai em uma data, certo?).
 
 A Páscoa, Corpus Christi e o nosso Carnaval acontecem em datas diferentes a cada ano, levamos isso em conta nessa pequena library. 
 
